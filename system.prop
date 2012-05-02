@@ -1,0 +1,11 @@
+rild.libpath=/vendor/lib/libsec-ril.so
+rild.libargs=-d /dev/ttys0
+telephony.lteOnCdmaDevice=0
+hwui.render_dirty_regions=false
+persist.sys.storage_preload=1
+ro.kernel.qemu=0
+keyguard.no_require_sim=true
+ro.com.google.clientidbase=android-samsung
+
+ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
