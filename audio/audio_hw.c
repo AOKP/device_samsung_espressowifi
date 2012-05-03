@@ -352,14 +352,15 @@ static uint32_t out_get_sample_rate(const struct audio_stream *stream)
 
 static int out_set_sample_rate(struct audio_stream *stream, uint32_t rate)
 {
-    return 0;
+    if (rate == out_get_sample_rate(stream))
+        return 0;
+    else
+        return -EINVAL;
 }
 
 static size_t out_get_buffer_size(const struct audio_stream *stream)
 {
-    struct tuna_stream_out *out = (struct tuna_stream_out *)stream;
-
-    return pcm_get_buffer_size(out->pcm);
+    return 4096;
 }
 
 static uint32_t out_get_channels(const struct audio_stream *stream)
@@ -419,21 +420,13 @@ static char * out_get_parameters(const struct audio_stream *stream, const char *
 
 static uint32_t out_get_latency(const struct audio_stream_out *stream)
 {
-    int bytes_per_sample;
-
-    if (pcm_config_mm.format == PCM_FORMAT_S32_LE)
-        bytes_per_sample = 4;
-    else
-        bytes_per_sample = 2;
-
-    return (pcm_config_mm.period_size * pcm_config_mm.period_count * 1000) /
-           (44100 * pcm_config_mm.channels * bytes_per_sample);
+    return 0;
 }
 
 static int out_set_volume(struct audio_stream_out *stream, float left,
                           float right)
 {
-    return -ENOSYS;
+    return -EINVAL;
 }
 
 static ssize_t out_write(struct audio_stream_out *stream, const void* buffer,
@@ -599,6 +592,10 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
 
     out->dev = ladev;
 
+    *format = out_get_format(&out->stream.common);
+    *channels = out_get_channels(&out->stream.common);
+    *sample_rate = out_get_sample_rate(&out->stream.common);
+
     *stream_out = &out->stream;
     return 0;
 
@@ -647,15 +644,6 @@ static int adev_set_master_volume(struct audio_hw_device *dev, float volume)
 
 static int adev_set_mode(struct audio_hw_device *dev, int mode)
 {
-    struct tuna_audio_device *adev = (struct tuna_audio_device *)dev;
-
-    pthread_mutex_lock(&adev->lock);
-    if (adev->mode != mode) {
-        adev->mode = mode;
-        select_route(adev);
-    }
-    pthread_mutex_unlock(&adev->lock);
-
     return 0;
 }
 
