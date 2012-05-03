@@ -94,8 +94,7 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs \
     audio.a2dp.default \
-    libaudioutils \
-    libtinyalsa
+    audio.primary.piranha
 
 # Properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
