@@ -1,4 +1,8 @@
 bin/fRom
+bin/geomagneticd
+bin/gps.cer
+bin/gpsd
+bin/orientationd
 cameradata/datapattern_420sp.yuv
 cameradata/datapattern_front_420sp.yuv
 etc/audio/LVVEFS_Rx_Configuration.txt
