@@ -6,7 +6,7 @@ bin/orientationd
 cameradata/datapattern_420sp.yuv
 cameradata/datapattern_front_420sp.yuv
 lib/libAMSWiFiLibs.so
-lib/libsecril_client.so
+lib/libsecril-client.so
 lib/hw/gps.omap4.so
 lib/hw/lights.omap4.so
 lib/hw/sensors.omap4.so
