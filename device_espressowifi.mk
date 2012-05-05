@@ -47,7 +47,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gps.xml:system/etc/gps.xml \
     $(LOCAL_PATH)/prebuilt/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilt/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/prebuilt/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/audio/espressowifi.xml:system/etc/sound/espressowifi.xml
 
 # Input device configuration files
 PRODUCT_COPY_FILES += \
@@ -93,8 +94,9 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accesory \
     make_ext4fs \
     setup_fs \
+    libaudioutils \
     audio.a2dp.default \
-    audio.primary.piranha
+    audio.primary.omap4
 
 # Properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
