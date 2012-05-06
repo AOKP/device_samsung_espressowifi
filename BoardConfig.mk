@@ -46,7 +46,6 @@ USE_OPENGL_RENDERER := true
 
 # Misc display settings
 BOARD_USE_SKIA_LCDTEXT := true
-BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true

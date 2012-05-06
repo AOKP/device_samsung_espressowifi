@@ -48,6 +48,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilt/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/prebuilt/somxreg.conf:system/etc/somxreg.conf \
     $(LOCAL_PATH)/audio/espressowifi.xml:system/etc/sound/espressowifi.xml
 
 # Input device configuration files
@@ -102,7 +103,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
-    ro.opengles.version=131072 \
+    ro.opengles.version = 131072 \
     persist.sys.usb.config=mtp,adb
 
 # Inherit tablet dalvik settings
@@ -110,9 +111,6 @@ $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
 
 # Call the vendor to setup proprietary files
 $(call inherit-product-if-exists, vendor/samsung/espressowifi/espressowifi-vendor.mk)
-
-# Build omap bits
-$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_espressowifi
