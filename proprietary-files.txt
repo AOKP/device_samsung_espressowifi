@@ -18,7 +18,7 @@ lib/libOMX.TI.DUCATI1.VIDEO.CAMERA.so
 lib/libOMX.TI.DUCATI1.VIDEO.DECODER.secure.so
 lib/libOMX.TI.DUCATI1.VIDEO.DECODER.so
 lib/libOMX.TI.DUCATI1.VIDEO.H264E.so
-lib/libOMX.TU.DUCATI1.VIDEO.MPEG4E.so
+lib/libOMX.TI.DUCATI1.VIDEO.MPEG4E.so
 lib/libOMX_Core.so
 lib/libOpenMAXAL.so
 lib/libPanoraMax3.so

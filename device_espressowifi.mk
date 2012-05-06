@@ -38,8 +38,12 @@ PRODUCT_COPY_FILES += \
 
 # Modules
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+    $(LOCAL_PATH)/modules/dhd.ko:system/lib/modules/dhd.ko \
     $(LOCAL_PATH)/modules/mwlan_aarp.ko:system/lib/modules/mwlan_aarp.ko \
-	$(LOCAL_PATH)/modules/dhd.ko:system/lib/modules/dhd.ko
+	$(LOCAL_PATH)/modules/rpmsg_client_sample.ko:system/lib/modules/rpmsg_client_sample.ko \
+    $(LOCAL_PATH)/modules/rpmsg_client_sample.ko:system/lib/modules/rpmsg_server_sample.ko \
+    $(LOCAL_PATH)/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
 
 # Prebuilt configuration files
 PRODUCT_COPY_FILES += \
