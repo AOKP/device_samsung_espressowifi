@@ -99,7 +99,9 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accesory \
     make_ext4fs \
     setup_fs \
-    libaudioutils \
+
+# Packages for audio
+PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.omap4
 
@@ -109,6 +111,14 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.supplicant_scan_interval=15 \
     ro.opengles.version = 131072 \
     persist.sys.usb.config=mtp,adb
+
+# for bugmailer
+ifneq ($(TARGET_BUILD_VARIANT),user)
+	PRODUCT_PACKAGES += send_bug
+	PRODUCT_COPY_FILES += \
+		system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
+		system/extras/bugmailer/send_bug:system/bin/send_bug
+endif
 
 # Inherit tablet dalvik settings
 $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
