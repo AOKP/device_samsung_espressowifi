@@ -88,6 +88,9 @@ PRODUCT_COPY_FILES += \
 
 # Build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_LOCALES += hdpi
 
 # This device has enough room for precise dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -125,6 +128,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
     ro.opengles.version = 131072 \
+    ro.sf.lcd_density=160 \
     persist.sys.usb.config=mtp,adb
 
 # for bugmailer
