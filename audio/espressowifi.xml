@@ -11,6 +11,7 @@
      <ctl name="DAC1L Mixer AIF1.1 Switch" val="1"/>
      <ctl name="DAC1R Mixer AIF1.1 Switch" val="1"/>
      <ctl name="DAC1 Switch" val="1"/>
+
      <ctl name="AIF1DAC1 Volume" val="96"/>
      <ctl name="AIF1 Boost Volume" val="0"/>
      <ctl name="DAC1 Volume" val="96"/>
@@ -31,6 +32,29 @@
      <ctl name="SPKR Boost SPKL Switch" val="0"/>
      <ctl name="SPKR Boost SPKR Switch" val="1"/>
      <ctl name="Speaker Mixer Volume" val="3"/>
+
+     <!-- DAC1->Output Mixer->Earpiece-->
+     <ctl name="Left Output Mixer DAC Switch" val="1"/>
+     <ctl name="Right Output Mixer DAC Switch" val="1"/>
+     <ctl name="Earpiece Mixer Left Output Switch" val="1"/>
+     <ctl name="Earpiece Mixer Right Output Switch" val="1"/>
+     <ctl name="Earpiece Switch" val="1"/>
+
+     <!-- IN1LN/P (main mic) -> IN1L PGA with +30dB -->
+     <ctl name="IN1L PGA IN1LP Switch" val="0"/>
+     <ctl name="IN1L PGA IN1LN Switch" val="0"/>
+     <ctl name="MIXINL IN1L Volume" val="1"/>
+     <ctl name="IN1L Switch" val="1"/>
+
+     <!-- IN1RN/P (headset mic) -> IN1R PGA with +30dB -->
+     <ctl name="IN1R PGA IN1RP Switch" val="0"/>
+     <ctl name="IN1R PGA IN1RN Switch" val="0"/>
+     <ctl name="MIXINR IN1R Volume" val="1"/>
+     <ctl name="IN1R Switch" val="1"/>
+
+     <!-- ADC -> AIF1 -->
+     <ctl name="AIF1ADC1L Mixer ADC/DMIC Switch" val="1"/>
+     <ctl name="AIF1ADC1R Mixer ADC/DMIC Switch" val="1"/>
    </path>
 
 <device name="speaker">
@@ -49,6 +73,33 @@
    <path name="off">
      <ctl name="HP Switch" val="0"/>
    </path>
+</device>
+
+<device name="earpiece">
+    <path name="on">
+      <ctl name="EP Switch" val="1"/>
+    </path>
+    <path name="off">
+      <ctl name="EP Switch" val="0"/>
+    </path>
+</device>
+
+<device name="builtin-mic">
+    <path name="on">
+      <ctl name="MIXINL IN1L Switch" val="1"/>
+    </path>
+    <path name="off">
+      <ctl name="MIXINL IN1L Switch" val="0"/>
+    </path>
+</device>
+
+<device name="headset">
+    <path name="on">
+      <ctl name="MIXINR IN1R Switch" val="1"/>
+    </path>
+    <path name="off">
+      <ctl name="MIXINR IN1R Switch" val="0"/>
+    </path>
 </device>
 
 </tinyhal>
