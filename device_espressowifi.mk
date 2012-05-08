@@ -52,7 +52,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilt/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/prebuilt/somxreg.conf:system/etc/somxreg.conf \
     $(LOCAL_PATH)/audio/espressowifi.xml:system/etc/sound/espressowifi.xml
 
 # Input device configuration files
@@ -104,6 +103,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.omap4
+
+# OpenMAX configuration files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry
+
+# OpenMAX
+PRODUCT_PACKAGES += \
+    libSEC_OMX_CORE \
+    libOMX.SEC.AVC.Decoder \
+    libOMX.SEC.M4V.Decoder \
+    libOMX.SEC.M4V.Encoder \
+    libOMX.SEC.AVC.Encoder
+
+# Libs
+PRODUCT_PACKAGES += \
+    libstagefrighthw
 
 # Properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
