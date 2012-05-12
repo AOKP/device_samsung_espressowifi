@@ -70,6 +70,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/BCM4330.hcd:system/vendor/firmware/BCM4330.hcd \
     $(LOCAL_PATH)/prebuilt/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin
 
+# Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
@@ -85,6 +86,22 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+
+# Stock Samsung images
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_0.qmg:system/media/battery_charging_0.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_5.qmg:system/media/battery_charging_5.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_20.qmg:system/media/battery_charging_20.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_40.qmg:system/media/battery_charging_40.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_60.qmg:system/media/battery_charging_60.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_80.qmg:system/media/battery_charging_80.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_100.qmg:system/media/battery_charging_100.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/battery_error.qmg:system/media/battery_error.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/bootsamsung.qmg:system/media/bootsamsung.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/bootsamsungloop.qmg:system/media/bootsamsungloop.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/chargingwarning.qmg:system/media/chargingwarning.qmg \
+    $(LOCAL_PATH)/prebuilt/samsung/Disconnected.qmg:system/media/Disconnected.qmg
 
 # Build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet
