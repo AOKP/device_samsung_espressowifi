@@ -3,8 +3,13 @@ rild.libargs=-d /dev/ttys0
 telephony.lteOnCdmaDevice=0
 persist.sys.storage_preload=1
 ro.kernel.qemu=0
-keyguard.no_require_sim=true
+media.enable-commonsource=true
+net.streaming.rtsp.uaprof=http://wap.samsungmobile.com/uaprof/
+hwui.render_dirty_regions=false
+ro.secdirenc=true
+ro.secsddecryption=true
+drm.service.enabled=true
 ro.com.google.clientidbase=android-samsung
-
-ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
-ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+ro.com.google.gmsversion=4.0.3_r0
