@@ -133,22 +133,6 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.omap4
 
-# OpenMAX configuration files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry
-
-# OpenMAX
-PRODUCT_PACKAGES += \
-    libSEC_OMX_CORE \
-    libOMX.SEC.AVC.Decoder \
-    libOMX.SEC.M4V.Decoder \
-    libOMX.SEC.M4V.Encoder \
-    libOMX.SEC.AVC.Encoder
-
-# Libs
-PRODUCT_PACKAGES += \
-    libstagefrighthw
-
 # Properties specific for this device
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
