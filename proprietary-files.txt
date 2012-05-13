@@ -22,6 +22,7 @@ lib/libOMX.TI.DUCATI1.VIDEO.H264E.so
 lib/libOMX.TI.DUCATI1.VIDEO.MPEG4E.so
 lib/libOMX_Core.so
 lib/libsecril-client.so
+lib/libstagefrighthw.so
 lib/libtiutils.so
 lib/hw/camera.omap4.so
 lib/hw/gps.omap4.so
