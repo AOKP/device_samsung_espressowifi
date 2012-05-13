@@ -47,11 +47,11 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt configuration files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/egl.cfg:system/lib/egl/egl.cfg \
-    $(LOCAL_PATH)/prebuilt/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/prebuilt/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/prebuilt/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+    $(LOCAL_PATH)/prebuilt/etc/gps.xml:system/etc/gps.xml \
+    $(LOCAL_PATH)/prebuilt/etc/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/audio/espressowifi.xml:system/etc/sound/espressowifi.xml
 
 # Input device configuration files
@@ -72,12 +72,12 @@ PRODUCT_COPY_FILES += \
 
 # Camera/Wifi/BT Firmware
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/nvram_net.txt:system/etc/wifi/nvram_net.txt \
-    $(LOCAL_PATH)/prebuilt/bcmdhd_apsta.bin:system/etc/wifi/bcmdhd_apsta.bin \
-    $(LOCAL_PATH)/prebuilt/bcmdhd_sta.bin:system/etc/wifi/bcmdhd_sta.bin \
-    $(LOCAL_PATH)/prebuilt/bcmdhd_p2p.bin:system/etc/wifi/bcmdhd_p2p.bin \
-    $(LOCAL_PATH)/prebuilt/BCM4330.hcd:system/vendor/firmware/BCM4330.hcd \
-    $(LOCAL_PATH)/prebuilt/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin
+    $(LOCAL_PATH)/prebuilt/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
+    $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_apsta.bin:system/etc/wifi/bcmdhd_apsta.bin \
+    $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_sta.bin:system/etc/wifi/bcmdhd_sta.bin \
+    $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_p2p.bin:system/etc/wifi/bcmdhd_p2p.bin \
+    $(LOCAL_PATH)/prebuilt/vendor/firmware/BCM4330.hcd:system/vendor/firmware/BCM4330.hcd \
+    $(LOCAL_PATH)/prebuilt/vendor/firmware/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -96,21 +96,23 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
-# Stock Samsung images
+# LPM
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_0.qmg:system/media/battery_charging_0.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_5.qmg:system/media/battery_charging_5.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_20.qmg:system/media/battery_charging_20.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_40.qmg:system/media/battery_charging_40.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_60.qmg:system/media/battery_charging_60.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_80.qmg:system/media/battery_charging_80.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_charging_100.qmg:system/media/battery_charging_100.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/battery_error.qmg:system/media/battery_error.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/bootsamsung.qmg:system/media/bootsamsung.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/bootsamsungloop.qmg:system/media/bootsamsungloop.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/chargingwarning.qmg:system/media/chargingwarning.qmg \
-    $(LOCAL_PATH)/prebuilt/samsung/Disconnected.qmg:system/media/Disconnected.qmg
+    $(LOCAL_PATH)/prebuilt/bin/playlpm:system/bin/playlpm \
+    $(LOCAL_PATH)/prebuilt/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so \
+    $(LOCAL_PATH)/prebuilt/media/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_0.qmg:system/media/battery_charging_0.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_5.qmg:system/media/battery_charging_5.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_20.qmg:system/media/battery_charging_20.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_40.qmg:system/media/battery_charging_40.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_60.qmg:system/media/battery_charging_60.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_80.qmg:system/media/battery_charging_80.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_charging_100.qmg:system/media/battery_charging_100.qmg \
+    $(LOCAL_PATH)/prebuilt/media/battery_error.qmg:system/media/battery_error.qmg \
+    $(LOCAL_PATH)/prebuilt/media/bootsamsung.qmg:system/media/bootsamsung.qmg \
+    $(LOCAL_PATH)/prebuilt/media/bootsamsungloop.qmg:system/media/bootsamsungloop.qmg \
+    $(LOCAL_PATH)/prebuilt/media/chargingwarning.qmg:system/media/chargingwarning.qmg \
+    $(LOCAL_PATH)/prebuilt/media/Disconnected.qmg:system/media/Disconnected.qmg
 
 # Build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet
