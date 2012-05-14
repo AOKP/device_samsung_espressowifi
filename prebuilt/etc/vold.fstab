@@ -42,7 +42,3 @@
 #storage_struct = parallel
 
 dev_mount sdcard /mnt/extSdCard auto /devices/platform/omap/omap_hsmmc.0/mmc_host/mmc1
-dev_mount sda /mnt/UsbDriveA auto /devices/platform/omap/musb-omap2430/musb-hdrc/usb1
-dev_mount sdb /mnt/UsbDriveB auto /devices/platform/omap/musb-omap2430/musb-hdrc/usb1
-dev_mount sdc /mnt/UsbDriveC auto /devices/platform/omap/musb-omap2430/musb-hdrc/usb1
-dev_mount sdd /mnt/UsbDriveD auto /devices/platform/omap/musb-omap2430/musb-hdrc/usb1

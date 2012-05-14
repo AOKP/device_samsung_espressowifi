@@ -12,20 +12,4 @@
              android:storageDescription="@string/storage_sd_card"
              android:primary="false"
              android:removable="true" />
-
-    <storage android:mountPoint="/mnt/UsbDriveA"
-             android:storageDescription="@string/storage_usb"
-             android:removable="true" />
-
-    <storage android:mountPoint="/mnt/UsbDriveB"
-             android:storageDescription="@string/storage_usb"
-             android:removable="true" />
-
-    <storage android:mountPoint="/mnt/UsbDriveC"
-             android:storageDescription="@string/storage_usb"
-             android:removable="true" />
-
-    <storage android:mountPoint="/mnt/UsbDriveD"
-             android:storageDescription="@string/storage_usb"
-             android:removable="true" />
 </StorageList>
