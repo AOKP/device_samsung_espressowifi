@@ -98,6 +98,7 @@ PRODUCT_COPY_FILES += \
 
 # LPM
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/bin/lpmkey:system/bin/lpmkey \
     $(LOCAL_PATH)/prebuilt/bin/playlpm:system/bin/playlpm \
     $(LOCAL_PATH)/prebuilt/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so \
     $(LOCAL_PATH)/prebuilt/media/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
