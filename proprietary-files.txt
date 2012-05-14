@@ -1,3 +1,4 @@
+bin/bcm_dut
 bin/fRom
 bin/geomagneticd
 bin/gps.cer
