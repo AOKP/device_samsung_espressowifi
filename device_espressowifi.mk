@@ -117,10 +117,9 @@ PRODUCT_COPY_FILES += \
 # Build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet
 
-# 7" tablet is "large" at 160dpi (169.x) is mdpi
-PRODUCT_AAPT_CONFIG := large mdpi
+# 7" tablet is "large" at 160dpi (169.x) is mdpi, but it's lying..
+PRODUCT_AAPT_CONFIG := normal mdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
-PRODUCT_LOCALES += mdpi
 
 # This device has enough room for precise dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -130,7 +129,7 @@ PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accesory \
     make_ext4fs \
-    setup_fs \
+    setup_fs
 
 # Packages for audio
 PRODUCT_PACKAGES += \
