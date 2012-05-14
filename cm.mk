@@ -10,7 +10,7 @@ PRODUCT_NAME := cm_espressowifi
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-P3113
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-P3113 BUILD_FINGERPRINT=samsung/espressowifiue/espressowifi:4.0.3/IML74K/P3113UEALD3:user/release-keys PRIVATE_BUILD_DESC="espressowifiue-user 4.0.3 IML74K P3113UEALD3 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=espressowifiue BUILD_FINGERPRINT=samsung/espressowifiue/espressowifi:4.0.3/IML74K/P3113UEALD3:user/release-keys PRIVATE_BUILD_DESC="espressowifiue-user 4.0.3 IML74K P3113UEALD3 release-keys"
 
 # Release name and versioning
 PRODUCT_RELEASE_NAME := espressowifi
