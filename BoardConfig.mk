@@ -81,6 +81,7 @@ TARGET_PREBUILT_KERNEL := device/samsung/espressowifi/kernel
 # Recovery options
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_HAS_SDCARD_INTERNAL := true
-BOARD_TOUCH_RECOVERY := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+
+# This doesn't exist in CyanogenMod repositories
+BOARD_USES_DATA_MEDIA_FOR_STORAGE := true
