@@ -41,7 +41,7 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # Egl settings
-BOARD_EGL_CFG := device/samsung/espressowifi/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/samsung/espressowifi/egl.cfg
 USE_OPENGL_RENDERER := true
 
 # Misc display settings

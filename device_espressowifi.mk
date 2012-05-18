@@ -24,7 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/espressowifi/overlay
 
 # Prebuilt kernel location
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/samsung/espressowifi/kernel
+    LOCAL_KERNEL := device/samsung/espressowifi/prebuilt/kernel
 else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -32,27 +32,30 @@ endif
 # Files needed for boot image
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    $(LOCAL_PATH)/ramdisk/init.espresso.rc:root/init.espresso.rc \
-    $(LOCAL_PATH)/ramdisk/init.espresso.usb.rc:root/init.espresso.usb.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.espresso.rc:root/ueventd.espresso.rc
+    $(LOCAL_PATH)/init.espresso.rc:root/init.espresso.rc \
+    $(LOCAL_PATH)/init.espresso.usb.rc:root/init.espresso.usb.rc \
+    $(LOCAL_PATH)/ueventd.espresso.rc:root/ueventd.espresso.rc
 
 # Modules
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
-    $(LOCAL_PATH)/modules/dhd.ko:system/lib/modules/dhd.ko \
-    $(LOCAL_PATH)/modules/mwlan_aarp.ko:system/lib/modules/mwlan_aarp.ko \
-	$(LOCAL_PATH)/modules/rpmsg_client_sample.ko:system/lib/modules/rpmsg_client_sample.ko \
-    $(LOCAL_PATH)/modules/rpmsg_client_sample.ko:system/lib/modules/rpmsg_server_sample.ko \
-    $(LOCAL_PATH)/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
+    $(LOCAL_PATH)/prebuilt/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+    $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
+    $(LOCAL_PATH)/prebuilt/mwlan_aarp.ko:system/lib/modules/mwlan_aarp.ko \
+	$(LOCAL_PATH)/prebuilt/rpmsg_client_sample.ko:system/lib/modules/rpmsg_client_sample.ko \
+    $(LOCAL_PATH)/prebuilt/rpmsg_client_sample.ko:system/lib/modules/rpmsg_server_sample.ko \
+    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
 
 # Prebuilt configuration files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
-    $(LOCAL_PATH)/prebuilt/etc/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/prebuilt/etc/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/audio/espressowifi.xml:system/etc/sound/espressowifi.xml
+    $(LOCAL_PATH)/configs/egl.cfg:system/lib/egl/egl.cfg \
+    $(LOCAL_PATH)/configs/espressowifi.xml:system/etc/sound/espressowifi.xml \
+    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/main.conf:system/etc/bluetooth/main.conf \
+    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/nvram_net.txt:system/etc/wifi/nvram_net.txt \
+    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
 
 # Input device configuration files
 PRODUCT_COPY_FILES += \
@@ -72,12 +75,11 @@ PRODUCT_COPY_FILES += \
 
 # Camera/Wifi/BT Firmware
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_apsta.bin:system/etc/wifi/bcmdhd_apsta.bin \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_sta.bin:system/etc/wifi/bcmdhd_sta.bin \
-    $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_p2p.bin:system/etc/wifi/bcmdhd_p2p.bin \
-    $(LOCAL_PATH)/prebuilt/vendor/firmware/BCM4330.hcd:system/vendor/firmware/BCM4330.hcd \
-    $(LOCAL_PATH)/prebuilt/vendor/firmware/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin
+    $(LOCAL_PATH)/prebuilt/bcmdhd_apsta.bin:system/etc/wifi/bcmdhd_apsta.bin \
+    $(LOCAL_PATH)/prebuilt/bcmdhd_sta.bin:system/etc/wifi/bcmdhd_sta.bin \
+    $(LOCAL_PATH)/prebuilt/bcmdhd_p2p.bin:system/etc/wifi/bcmdhd_p2p.bin \
+    $(LOCAL_PATH)/firmware/BCM4330.hcd:system/vendor/firmware/BCM4330.hcd \
+    $(LOCAL_PATH)/firmware/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -95,25 +97,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
-
-# LPM
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/bin/lpmkey:system/bin/lpmkey \
-    $(LOCAL_PATH)/prebuilt/bin/playlpm:system/bin/playlpm \
-    $(LOCAL_PATH)/prebuilt/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so \
-    $(LOCAL_PATH)/prebuilt/media/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_0.qmg:system/media/battery_charging_0.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_5.qmg:system/media/battery_charging_5.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_20.qmg:system/media/battery_charging_20.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_40.qmg:system/media/battery_charging_40.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_60.qmg:system/media/battery_charging_60.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_80.qmg:system/media/battery_charging_80.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_charging_100.qmg:system/media/battery_charging_100.qmg \
-    $(LOCAL_PATH)/prebuilt/media/battery_error.qmg:system/media/battery_error.qmg \
-    $(LOCAL_PATH)/prebuilt/media/bootsamsung.qmg:system/media/bootsamsung.qmg \
-    $(LOCAL_PATH)/prebuilt/media/bootsamsungloop.qmg:system/media/bootsamsungloop.qmg \
-    $(LOCAL_PATH)/prebuilt/media/chargingwarning.qmg:system/media/chargingwarning.qmg \
-    $(LOCAL_PATH)/prebuilt/media/Disconnected.qmg:system/media/Disconnected.qmg
 
 # Build characteristics setting
 PRODUCT_CHARACTERISTICS := tablet

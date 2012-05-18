@@ -3,7 +3,9 @@ bin/fRom
 bin/geomagneticd
 bin/gps.cer
 bin/gpsd
+bin/lpmkey
 bin/orientationd
+bin/playlpm
 bin/smc.ini
 bin/smc_pa.ift
 bin/smc_pa_ctrl
@@ -22,6 +24,7 @@ lib/libOMX.TI.DUCATI1.VIDEO.DECODER.so
 lib/libOMX.TI.DUCATI1.VIDEO.H264E.so
 lib/libOMX.TI.DUCATI1.VIDEO.MPEG4E.so
 lib/libOMX_Core.so
+lib/libQmageDecoder.so
 lib/libsecril-client.so
 lib/libstagefrighthw.so
 lib/libtiutils.so
@@ -29,6 +32,19 @@ lib/hw/camera.omap4.so
 lib/hw/gps.omap4.so
 lib/hw/lights.omap4.so
 lib/hw/sensors.omap4.so
+media/battery_batteryerror.qmg
+media/battery_charging_0.qmg
+media/battery_charging_5.qmg
+media/battery_charging_20.qmg
+media/battery_charging_40.qmg
+media/battery_charging_60.qmg
+media/battery_charging_80.qmg
+media/battery_charging_100.qmg
+media/battery_error.qmg
+media/bootsamsung.qmg
+media/bootsamsungloop.qmg
+media/chargingwarning.qmg
+media/Disconnected.qmg
 vendor/bin/pvrsrvinit
 vendor/lib/libglslcompiler.so
 vendor/lib/libIMGegl.so
