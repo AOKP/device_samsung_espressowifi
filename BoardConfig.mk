@@ -82,6 +82,6 @@ TARGET_PREBUILT_KERNEL := device/samsung/espressowifi/prebuilt/kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-
+BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 # This doesn't exist in CyanogenMod repositories
 BOARD_USES_DATA_MEDIA_FOR_STORAGE := true
