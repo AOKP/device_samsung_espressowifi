@@ -41,7 +41,7 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # Egl settings
-BOARD_EGL_CFG := device/samsung/espressowifi/egl.cfg
+BOARD_EGL_CFG := device/samsung/espressowifi/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 
 # Misc display settings
@@ -76,7 +76,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 5003787264
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # prebuilt kernel
-TARGET_PREBUILT_KERNEL := device/samsung/espressowifi/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/espressowifi/prebuilt/kernel
 
 # Recovery options
 BOARD_HAS_NO_SELECT_BUTTON := true
